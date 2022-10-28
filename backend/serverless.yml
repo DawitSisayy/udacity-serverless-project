@@ -14,8 +14,8 @@ provider:
   name: aws
   runtime: nodejs12.x
  # lambdaHashingVersion: '20201221'
-  stage: ${opt:stage, 'prod'}
-  region: ${opt:region, 'us-east-2'}
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
 
   tracing:
     lambda: true
@@ -24,9 +24,9 @@ provider:
   # Use these variables in the functions and resouorces section below. For example, 
   # ${self:provider.environment.ATTACHMENT_S3_BUCKET}
   environment:
-    PROJECT_NAME: udapeople-serveless
-    TODOS_TABLE: udapeople-serverless-${self:provider.stage}
-    S3_BUCKET_NAME: udapeop-serverless-${self:provider.stage}
+    PROJECT_NAME: dawits
+    TODOS_TABLE: dawits-${self:provider.stage}
+    S3_BUCKET_NAME: dawits-${self:provider.stage}
 
 
 custom:
@@ -68,20 +68,6 @@ custom:
   
   
   
-  #logs:
-    # Enable API Gateway logs
-   # restApi: true
-
-  #iam:
-   # role:
-    #  statements:
-     #   - Effect: Allow
-     #     Action:
-     #       - xray:PutTelemetryRecords
-     #       - xray:PutTraceSegments
-     #     Resource: "*"
-
-
 functions:
 
   Auth:
